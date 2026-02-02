@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Walentynka 💘</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #ffe6ec;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        img.bear {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 6px;
+            transition: transform 0.3s ease;
+        }
+
+        #yesBtn {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #noBtn {
+            background-color: #ccc;
+            color: black;
+        }
+
+        /* ekran z sercem */
+        .heart-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: white;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .heart-screen img {
+            width: 80%;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="main">
+    <img class="bear" src="https://i.imgur.com/6XGQY8K.png" alt="Miś z sercem">
+    <h1>Zostaniesz moją walentynką?</h1>
+
+    <div class="buttons">
+        <button id="yesBtn">tak</button>
+        <button id="noBtn">nie</button>
+    </div>
+</div>
+
+<div class="heart-screen" id="heartScreen">
+    <img src="https://i.imgur.com/Qp9Z1Zm.png" alt="Serce">
+</div>
+
+<script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const heartScreen = document.getElementById("heartScreen");
+
+    let scale = 1;
+
+    noBtn.addEventListener("click", () => {
+        scale *= 1.25;
+        yesBtn.style.transform = `scale(${scale})`;
+    });
+
+    yesBtn.addEventListener("click", () => {
+        heartScreen.style.display = "flex";
+    });
+</script>
+
+</body>
+</html>
